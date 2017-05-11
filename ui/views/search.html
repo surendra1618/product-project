@@ -1,0 +1,64 @@
+<div>
+    <div id="mySearchPageDesign" >
+        <select ng-model="searchBy">
+            <option value="allSearch">Search All</option>
+            <option value="nameSearch">Name</option>
+            <option value="productNumberSearch">Product Number</option>
+            <option value="upcSearch">UPC Code</option>
+        </select>
+        <input type="text" ng-model="searchValue" placeholder="{{searchBy}}">
+        <button class="btn btn-primary" ng-click="search(searchBy,searchValue)">Search</button>
+    </div>
+    <div>
+        <table class="table table-bordered myTableDesign" ng-if="searchResultDisplay">
+            <tr>
+                <th>ID</th>
+                <th>Number</th>
+                <th>Name</th>
+                <th>UPC Code</th>
+                <th>Version</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Manufacturer</th>
+                <th>Description</th>
+                <th>Created Date</th>
+                <th>Active Date</th>
+                <th>Inactive Date</th>
+                <th>Current Qty</th>
+                <th>Threshold Qty</th>
+                <th>Order Qty</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr ng-repeat="product in searchProduct">
+                <td>{{product.pk}}</td>
+                <td>{{product.productNum}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.upcCode}}</td>
+                <td>{{product.version}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.manufacturer}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.createdDate}}</td>
+                <td>{{product.activeDate}}</td>
+                <td>{{product.inactiveDate}}</td>
+                <td>{{product.qtyCurrent}}</td>
+                <td>{{product.qtyThreshold}}</td>
+                <td>{{product.qtyOrder}}</td>
+
+
+                <td>
+                    <a href="#!/addUpdate">
+                        <i class="glyphicon glyphicon-edit" ng-click="editProduct(product)"></i>
+                    </a>
+                </td>
+
+                <td>
+                    <i class="glyphicon glyphicon-remove" ng-click="removeProduct(product.pk)"></i>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<form class="form-horizontal" id="myAddPageDesign">
+    <br>
+    <div class="form-group">
+        <div class="col-sm-2"></div>
+        <label class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" ng-model="productModel.name" placeholder="Name">
+        </div>
+        <p>*</p>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-2"></div>
+        <label class="col-sm-2 control-label">Category</label>
+        <div class="col-sm-4">
+            <select class="form-control" ng-model="productModel.category">
+                <option value="Desktop">Desktop</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Software">Software</option>
+                <option value="Phone">Phone</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Game">Game</option>
+                <option value="Headphone">Headphone</option>
+            </select>
+        </div>
+        <p>*</p>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-2"></div>
+        <label class="col-sm-2 control-label">Version</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" ng-model="productModel.version" placeholder="Version">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-2"></div>
+        <label class="col-sm-2 control-label">Manufacturer</label>
+        <div class="col-sm-4">
+            <select class="form-control" ng-model="productModel.manufacturer">
+                <option value="Apple">Apple</option>
+                <option value="Dell">Dell</option>
+                <option value="Google">Google</option>
+                <option value="Microsoft">Microsoft</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Sony">Sony</option>
+            </select>
+        </div>
+        <p>*</p>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-2"></div>
+        <label class="col-sm-2 control-label">UPC Code</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" ng-model="productModel.upcCode" placeholder="UPC Code">
+        </div>
+        <p>*</p>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-2"></div>
+        <label class="col-sm-2 control-label">Price</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" ng-model="productModel.price" placeholder="Price">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-2"></div>
+        <label class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" ng-model="productModel.description" placeholder="description">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-2"></div>
+        <label class="col-sm-2 control-label">Status</label>
+        <div class="col-sm-4">
+            <input type="radio" name="activeStatus" ng-model="productModel.activeStatus" ng-value="true">Active</input>
+            <input type="radio" name="activeStatus" ng-model="productModel.activeStatus" ng-value="false">Inactive</input>
+        </div>
+    </div>
+    <div ng-if="productModel.activeStatus">
+        <div class="form-group">
+            <div class="col-sm-2"></div>
+            <label class="col-sm-2 control-label">Current Quantity</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" ng-model="productModel.qtyCurrent" placeholder="Current Quantity">
+            </div>
+            <p>*</p>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2"></div>
+            <label class="col-sm-2 control-label">Threshold Quantity</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" ng-model="productModel.qtyThreshold" placeholder="Threshold Quantity">
+            </div>
+            <p>*</p>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2"></div>
+            <label class="col-sm-2 control-label">Order Quantity</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" ng-model="productModel.qtyOrder" placeholder="Order Quantity">
+            </div>
+            <p>*</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-2"></div>
+        <label class="col-sm-2">
+        </label>
+        <div class="col-sm-4">
+            <button class="btn btn-primary" id="myAddButton" ng-if="isAddButton" ng-click="addProduct()">Add</button>
+            <button class="btn btn-primary" id="myEditButton" ng-if="!isAddButton" ng-click="putProduct()">Update</button>
+        </div>
+    </div>
+
+</form>
